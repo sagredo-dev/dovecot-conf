@@ -24,6 +24,7 @@
 
 set -e
 
+# get the vpopmail dir
 VPOPMAILDIR=$(getent passwd vpopmail | cut -d: -f6)
 if [ ! -d $VPOPMAILDIR ]; then
   echo "${VPOPMAILDIR} dir not found"
