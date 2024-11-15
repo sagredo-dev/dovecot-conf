@@ -30,7 +30,7 @@ if [ ! -d $VPOPMAILDIR ]; then
   exit 1
 fi
 
-# Config and executables path
+# Config path
 VPOPMAIL_MYSQL_CONFIG="${VPOPMAILDIR}/etc/vpopmail.mysql"
 
 if [ ! -r $VPOPMAIL_MYSQL_CONFIG ]; then
