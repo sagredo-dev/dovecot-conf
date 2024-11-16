@@ -51,6 +51,6 @@ u=$(echo $USER | cut -d'@' -f1)
 d=$(echo $USER | cut -d'@' -f2)
 
 # Run the query
-echo "UPDATE lastauth SET timestamp=UNIX_TIMESTAMP(now()) WHERE user='$u' and domain='$d';" | mysql -P$PORT -h$HOST -u$USR -p$PWD $DB
+echo "UPDATE lastauth SET timestamp=UNIX_TIMESTAMP(now()), remote_ip='$IP' WHERE user='$u' and domain='$d';" | mysql -P$PORT -h$HOST -u$USR -p$PWD $DB
 
 exec "$@"
