@@ -1,8 +1,8 @@
-# https://doc.dovecot.org/2.4.0/core/config/auth/databases/sql.html#mysql
+# https://doc.dovecot.org/latest/core/config/auth/databases/sql.html#mysql
 sql_driver = mysql
 # Default password scheme.
 # List of supported schemes is in
-# https://doc.dovecot.org/2.4.0/core/config/auth/schemes.html
+# https://doc.dovecot.org/latest/core/config/auth/schemes.html
 auth_allow_weak_schemes = yes
 passdb_default_password_scheme = SHA512-CRYPT
 
@@ -54,7 +54,7 @@ passdb sql {
                 AND \
                 ('%{remote_ip}'='127.0.0.1' OR COALESCE(disable_imap,0)!=1)
 
-  # <WEBMAIL-IP> is the IP of your webmail 
+  # 127.0.0.1 is the IP of your webmail 
   # I'm assuming that the imap connection is only on port 993 and the pop3 connection is on port 995. 
   # Adjust to your needs 
 
@@ -63,13 +63,13 @@ passdb sql {
   # ************************** USER LIMITS via vpopmail.pw_gid filed 
   # SELECT user 
   # WHEN POP is not disabled for that user connecting on port 995 (995 is the pop3s port allowed from remote in my configuration) 
-  # AND WHEN webmail access is not disabled for that user when connecting from <WEBMAIL-IP> 
+  # AND WHEN webmail access is not disabled for that user when connecting from 127.0.0.1 
   # AND WHEN IMAP is not disabled for that user connecting on port 993 (993 is the imap port allowed from remote 
   # in my configuration) unless his remote ip the one belonging to the webmail 
   # 
   # ************************* DOMAIN LIMITS via limits table 
   # AND WHEN WEBMAIL access for the domain is not disabled 
-  # AND WHEN IMAP access for the domain is not disabled when not connecting from <WEBMAIL-IP>
+  # AND WHEN IMAP access for the domain is not disabled when not connecting from 127.0.0.1
 }
 
 # "prefetch" user database means that the passdb already provided the
