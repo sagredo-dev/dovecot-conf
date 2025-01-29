@@ -2,16 +2,15 @@
 #
 # <doc/wiki/AuthDatabase.VPopMail.txt>
 
-passdb {
+passdb vpopmail {
   driver = vpopmail
 
   # [cache_key=<key>] [webmail=<ip>]
-  args =
 }
 
-userdb {
+userdb vpopmail {
   driver = vpopmail
 
   # [quota_template=<template>] - %q expands to Maildir++ quota
-  args = quota_template=quota_rule=*:backend=%q
+  # args = quota_template=quota_rule=*:backend=%q
 }

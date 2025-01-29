@@ -5,7 +5,7 @@
 #
 
 # Config and executables path
-VPOPMAIL_MYSQL_CONFIG="~vpopmail/etc/vpopmail.mysql"
+VPOPMAIL_MYSQL_CONFIG="/home/vpopmail/etc/vpopmail.mysql"
 
 # Extract mysql params
 HOST=$(sed -n "/#/! s/^\(.*\)|.*|.*|.*|.*/\1/p" $VPOPMAIL_MYSQL_CONFIG)

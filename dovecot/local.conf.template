@@ -1,0 +1,36 @@
+# Rename to local.conf
+
+# Uncomment to enable managesieve protocol:
+protocols {
+#  sieve = yes
+}
+
+# The mysqld.sock socket may be in different locations in different systems.
+#mysql /var/run/mysqld/mysqld.sock {
+mysql localhost {
+  user = vpopmail
+  password = xxxxxxxxxxxxxxxxxxxx
+  dbname = vpopmail
+}
+
+auth_default_domain = mydomain.tld
+
+# comment out to disable debug
+log_debug = (category=imap AND category=mail AND category=auth AND category=ssl)
+
+# ssl certs
+ssl_server_cert_file = /etc/dehydrated/certs/mydomain.tld/fullchain.pem
+ssl_server_key_file  = /etc/dehydrated/certs/mydomain.tld/privkey.pem
+
+# Address to use when sending rejection mails.
+# Default is postmaster@%d. %d expands to recipient domain.
+postmaster_address = postmaster@mydomain.tld
+
+# Hostname to use in various parts of sent mails (e.g. in Message-Id) and
+# in LMTP replies. Default is the system's real hostname@domain.
+hostname = mydomain.tld
+
+# default language for solr (en already included, but not default)
+language en {
+  default = yes
+}

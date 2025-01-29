@@ -1,3 +1,2 @@
-dh.pem
 **/*.svbin
-#**/dovecot-sql.conf.ext
+local.conf

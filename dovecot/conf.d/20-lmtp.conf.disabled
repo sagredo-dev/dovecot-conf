@@ -1,4 +1,5 @@
 ##
+#i
 ## LMTP specific settings
 ##
 
@@ -13,6 +14,9 @@
 # Verify quota before replying to RCPT TO. This adds a small overhead.
 #lmtp_rcpt_check_quota = no
 
+# Add "Received:" header to mails delivered.
+#lmtp_add_received_header = yes
+
 # Which recipient address to use for Delivered-To: header and Received:
 # header. The default is "final", which is the same as the one given to
 # RCPT TO command. "original" uses the address given in RCPT TO's ORCPT
@@ -20,7 +24,20 @@
 # when a mail has multiple recipients.
 #lmtp_hdr_delivery_address = final
 
+# Workarounds for various client bugs:
+#   whitespace-before-path:
+#     Allow one or more spaces or tabs between `MAIL FROM:' and path and between
+#     `RCPT TO:' and path.
+#   mailbox-for-path:
+#     Allow using bare Mailbox syntax (i.e., without <...>) instead of full path
+#     syntax.
+#
+#lmtp_client_workarounds {
+#  whitespace-before-path = yes
+#}
+
 protocol lmtp {
-  # Space separated list of plugins to load (default is global mail_plugins).
-  #mail_plugins = $mail_plugins
+  #mail_plugins {
+  #  sieve = yes
+  #}
 }
