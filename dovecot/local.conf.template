@@ -5,6 +5,12 @@ protocols {
 #  sieve = yes
 }
 
+# enable ipv6?
+listen {
+  * = yes
+  :: = yes
+}
+
 # The mysqld.sock socket may be in different locations in different systems.
 #mysql /var/run/mysqld/mysqld.sock {
 mysql localhost {
