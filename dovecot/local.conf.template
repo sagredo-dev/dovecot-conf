@@ -23,6 +23,11 @@ auth_default_domain = mydomain.tld
 
 # comment out to disable debug
 log_debug = (category=imap AND category=mail AND category=auth AND category=ssl)
+#log_debug = (category=imap AND category=mail AND category=auth AND category=ssl)
+auth_verbose = yes
+# In case of password mismatches, log the passwords and used scheme so the
+# problem can be debugged. Enabling this also enables auth_debug.
+auth_debug_passwords = yes
 
 # ssl certs
 ssl_server_cert_file = /etc/dehydrated/certs/mydomain.tld/fullchain.pem
