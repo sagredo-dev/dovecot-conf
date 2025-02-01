@@ -4,6 +4,12 @@
 protocols {
 #  sieve = yes
 }
+#protocol lda {
+  # Boolean list of plugins to load
+  #mail_plugins {
+  #  sieve = yes
+  #}
+#}
 
 # enable ipv6?
 listen {
@@ -29,8 +35,10 @@ auth_verbose = yes
 auth_debug_passwords = yes
 
 # ssl certs
-ssl_server_cert_file = /etc/dehydrated/certs/mydomain.tld/fullchain.pem
-ssl_server_key_file  = /etc/dehydrated/certs/mydomain.tld/privkey.pem
+ssl_server_cert_file = /etc/ssl/certs/dovecot.pem
+ssl_server_key_file = /etc/ssl/private/dovecot.pem
+#ssl_server_cert_file = /etc/dehydrated/certs/mydomain.tld/fullchain.pem
+#ssl_server_key_file  = /etc/dehydrated/certs/mydomain.tld/privkey.pem
 
 # Address to use when sending rejection mails.
 # Default is postmaster@%d. %d expands to recipient domain.
