@@ -1,6 +1,6 @@
 # Rename to local.conf
 
-# Uncomment to enable managesieve protocol:
+# Uncomment to enable managesieve protocol and sieve plugin:
 protocols {
 #  sieve = yes
 }
@@ -48,7 +48,16 @@ postmaster_address = postmaster@mydomain.tld
 # in LMTP replies. Default is the system's real hostname@domain.
 hostname = mydomain.tld
 
+# solr connection
+fts solr {
+  url = http://127.0.0.1:8983/solr/dovecot/
+}
 # default language for solr (en already included, but not default)
 language en {
   default = yes
 }
+# add your regional language
+#language it {
+  # you can have only one default language
+  default = no
+#}
