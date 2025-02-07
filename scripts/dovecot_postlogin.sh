@@ -51,6 +51,7 @@ u=$(echo $USER | cut -d'@' -f1)
 d=$(echo $USER | cut -d'@' -f2)
 
 # Run the query
-echo "UPDATE lastauth SET timestamp=UNIX_TIMESTAMP(now()), remote_ip='$IP' WHERE user='$u' and domain='$d';" | mysql -P$PORT -h$HOST -u$USR -p$PWD $DB
+export MYSQL_PWD=$PWD
+echo "INSERT INTO lastauth (user, domain, remote_ip, timestamp) VALUES ('$u', '$d', '$IP', UNIX_TIMESTAMP(now())) ON DUPLICATE KEY UPDATE timestamp=UNIX_TIMESTAMP(now()), remote_ip='$IP';" | mysql -P$PORT -h$HOST -u$USR $DB
 
 exec "$@"
