@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 # Updates the vpopmail.lastauth table on login
-# Thanks kengheng for the hint
+# Thanks kengheng for sharing
 #
 # example for 10-master.conf:
 #
@@ -13,8 +13,8 @@
 #  executable = pop3 postlogin
 #}
 #service postlogin {
-#  executable = script-login /usr/local/dovecot/etc/dovecot_postlogin.sh
-#  user = $default_login_user
+#  executable = script-login /usr/local/dovecot/etc/scripts/dovecot_postlogin.sh
+#  user = vpopmail
 #  unix_listener postlogin {
 #    user = vpopmail
 #    group = vchkpw
