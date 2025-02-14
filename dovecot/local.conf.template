@@ -11,13 +11,13 @@ protocols {
   #}
 #}
 
-# enable ipv6?
 listen {
   * = yes
+  # enable ipv6?
   :: = yes
 }
 
-# The mysqld.sock socket may be in different locations in different systems.
+# mysql connection. Define the host or the socket location.
 #mysql /var/run/mysqld/mysqld.sock {
 mysql localhost {
   user = vpopmail
@@ -25,10 +25,11 @@ mysql localhost {
   dbname = vpopmail
 }
 
+# The domain part won't be necessary for this domain
 auth_default_domain = mydomain.tld
 
 # comment out to disable debug
-log_debug = (category=imap AND category=mail AND category=auth AND category=ssl)
+log_debug = (category=pop3 AND category=imap AND category=mail AND category=auth AND category=ssl)
 auth_verbose = yes
 # In case of password mismatches, log the passwords and used scheme so the
 # problem can be debugged. Enabling this also enables auth_debug.
@@ -59,5 +60,5 @@ language en {
 # add your regional language
 #language it {
   # you can have only one default language
-  default = no
+  # default = no
 #}
