@@ -3,6 +3,7 @@ sql_driver = mysql
 # Default password scheme.
 # List of supported schemes is in
 # https://doc.dovecot.org/latest/core/config/auth/schemes.html
+# This is important if you have old MD5-CRYPT passwords accepted (starting with $1)
 auth_allow_weak_schemes = yes
 passdb_default_password_scheme = SHA512-CRYPT
 
@@ -24,4 +25,6 @@ passdb_default_password_scheme = SHA512-CRYPT
 !include sql-query-default.conf.ext
 
 # auth-sql --disable-many-domains --enable--sql-aliasdomain --enable-mysql-limits
+# You can add the following in your local.conf to overwrite the directives
+# already defined above in sql-query-default.conf.ext
 #!include sql-query--disable-many-domains.conf.ext
