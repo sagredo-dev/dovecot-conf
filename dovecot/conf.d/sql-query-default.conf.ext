@@ -75,7 +75,7 @@ userdb sql {
     SELECT \
       vpopmail.pw_dir AS home, \
       89 AS uid, \
-      89 AS gid \
+      89 AS gid, \
       CONCAT(REPLACE(SUBSTRING_INDEX(vpopmail.pw_shell, 'S', 1), 'NOQUOTA', '0'), 'B') AS quota_storage_size \
     FROM vpopmail \
     WHERE \
