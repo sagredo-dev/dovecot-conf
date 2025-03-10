@@ -10,7 +10,7 @@ passdb sql {
   # and "domain" fields instead of "user".
 
   # (Thanks to Arturo Blanco for his hints concerning vpopmail limits
-  #  and to Alexandre Fonceca for the quota_rule addition)
+  #  and to Alexandre Fonceca and Hakan Cakiroglu for the quota addition)
 
   # NB: This query requires the sql-aliasdomains feature
   #     and that you have added the aliasdomains db table
