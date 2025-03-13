@@ -1,2 +1,4 @@
 **/*.svbin
 local.conf
+**/99-test.conf
+test/
