@@ -1,4 +1,5 @@
 **/*.svbin
 local.conf
+deny-users
 **/99-test.conf
 test/
