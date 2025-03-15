@@ -1,0 +1,24 @@
+# Configuration file for quota-warning.sh
+#
+# Rename to quota-warning.conf
+#
+# If your language is en and qmail is installed in /var/qmail
+# you don't need this file
+
+#################################################################################
+
+# Template language (en is already the default, no need to declare it)
+TPL_LANG=it
+
+# Normally you don't have to define anything else.
+# The sender will be noreply@me where 'me' is the content of /var/qmail/control/me
+
+#################################################################################
+
+# From email addresses
+# FROM_EMAIL=postmaster@mydomain.tld
+
+# If FROM_EMAIL is not defined, the program will try to define it as noreply@me
+# where 'me' is content of /var/qmail/control/me.
+# Define the qmail dir if it's not in the usual /var/qmail location
+# QMAIL_DIR=/var/qmail
