@@ -1,7 +1,7 @@
 #!/bin/sh
 #
 # Send the quota warning message
-# Author: R. Puzzanghera https://notes.sagredo.eu
+# Author: R. Puzzanghera https://www.sagredo.eu
 #
 # Runned by 90-quota.conf
 #

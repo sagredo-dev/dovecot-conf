@@ -14,7 +14,7 @@ passdb sql {
 
   # NB: This query requires the sql-aliasdomains feature
   #     and that you have added the aliasdomains db table
-  #     More info here More info here https://notes.sagredo.eu/en/qmail-notes-185/dovecot-vpopmail-auth-driver-removal-migrating-to-the-sql-driver-241.html
+  #     More info here More info here https://www.sagredo.eu/en/qmail-notes-185/dovecot-vpopmail-auth-driver-removal-migrating-to-the-sql-driver-241.html
 
   query = \
     SELECT \
