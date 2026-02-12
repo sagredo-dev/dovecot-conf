@@ -1,5 +1,5 @@
 **/*.svbin
-local.conf
+*local.conf
 quota-warning.conf
 deny-users
 master-users
