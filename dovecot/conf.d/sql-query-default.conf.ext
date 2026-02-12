@@ -84,5 +84,5 @@ userdb sql {
       vpopmail.pw_domain='%{user | domain}'
 
   # Query to get a list of all usernames.
-  userdb_sql_iterate_query = SELECT CONCAT(pw_name,'@',pw_domain) AS user FROM vpopmail
+  userdb_sql_iterate_query = SELECT CONCAT(pw_name,'@',pw_domain) AS user FROM vpopmail ORDER BY pw_domain, pw_name
 }
