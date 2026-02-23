@@ -5,3 +5,4 @@ deny-users
 master-users
 **/99-test.conf
 test/
+sni.conf

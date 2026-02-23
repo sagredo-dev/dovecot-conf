@@ -1,0 +1,15 @@
+# Rename to sni.conf
+# Imported from local.conf (add !include_try sni.conf)
+
+### SNI settings
+# add local_name for each domain you want to define a certificate for
+
+#local_name <FQDN> {
+#  ssl_server_cert_file = /etc/dehydrated/certs/<FQDN>/fullchain.pem
+#  ssl_server_key_file  = /etc/dehydrated/certs/<FQDN>/privkey.pem
+#}
+# This will satisfy clients looking for imap.<FQDN> or pop3.<FQDN>
+#local_name *.<FQDN> {
+#  ssl_server_cert_file = /etc/dehydrated/certs/<FQDN>/fullchain.pem
+#  ssl_server_key_file  = /etc/dehydrated/certs/<FQDN>/privkey.pem
+#}

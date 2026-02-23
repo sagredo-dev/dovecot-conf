@@ -62,3 +62,6 @@ language en {
   # you can have only one default language
   # default = no
 #}
+
+# SNI settings
+!include_try sni.conf
